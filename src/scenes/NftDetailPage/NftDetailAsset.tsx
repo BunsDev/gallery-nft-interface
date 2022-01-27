@@ -80,8 +80,13 @@ function NftDetailAsset({ nft, userOwnsAsset }: Props) {
 
   const { aspectRatioType } = useContentState();
   const breakpoint = useBreakpoint();
+
+  // We do not want to enforce square aspect ratio for iframes https://github.com/gallery-so/gallery/pull/536
+  const isIframe = getMediaType(nft) === NftMediaType.ANIMATION;
   const shouldEnforceSquareAspectRatio =
-    breakpoint === size.desktop || breakpoint === size.tablet || aspectRatioType !== 'wide';
+    breakpoint === size.desktop ||
+    breakpoint === size.tablet ||
+    (aspectRatioType !== 'wide' && !isIframe);
 
   return (
     <StyledAssetContainer
