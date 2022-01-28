@@ -27,6 +27,7 @@ function NftDetailPage({ nftId }: Props) {
   const authenticatedUsername = useAuthenticatedUsername();
 
   const userOwnsAsset = authenticatedUsername === username;
+  const assetHasNote = true; /* TODO: implement */
 
   const handleBackClick = useCallback(
     (event: React.MouseEvent<HTMLElement>) => {
@@ -77,7 +78,7 @@ function NftDetailPage({ nftId }: Props) {
         )} */}
           <StyledContentContainer>
             <ShimmerProvider>
-              <NftDetailAsset nft={nft} userOwnsAsset={userOwnsAsset} />
+              <NftDetailAsset nft={nft} userOwnsAsset={userOwnsAsset} assetHasNote={assetHasNote} />
             </ShimmerProvider>
             <NftDetailText nft={nft} />
           </StyledContentContainer>
