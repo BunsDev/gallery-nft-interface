@@ -24,7 +24,7 @@ function DeleteCollectionConfirmation({ collectionId }: Props) {
     setIsLoading(false);
     hideModal();
   }, [collectionId, deleteCollection, hideModal]);
-
+  console.log('lul');
   return (
     <StyledConfirmation>
       <BodyMedium>Are you sure you want to delete your collection?</BodyMedium>
