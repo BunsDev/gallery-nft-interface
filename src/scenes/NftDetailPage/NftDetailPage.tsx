@@ -52,7 +52,9 @@ function NftDetailPage({ nftId }: Props) {
   const nft = useNft({ id: nftId ?? '' });
   const headTitle = useMemo(() => `${nft?.name} - ${username} | Gallery`, [nft, username]);
 
-  const assetHasNote = nft?.collectors_note !== ''; /* TODO: implement via backend */
+  /* TODO: implement via backend */
+  const assetHasNote =
+    nft?.collectors_note !== '' || nft.id === '1zsXvHQ92Z3K6K7JId3IIds3Q0B'; /* DELETE ME */
 
   if (!nft) {
     return <GalleryRedirect to="/404" />;
