@@ -25,10 +25,7 @@ function NftDetailPage({ nftId }: Props) {
 
   const username = window.location.pathname.split('/')[1];
   const authenticatedUsername = useAuthenticatedUsername();
-
   const userOwnsAsset = authenticatedUsername === username;
-  const assetHasNote =
-    username === 'connorr' || username === 'robin'; /* TODO: implement via backend */
 
   const handleBackClick = useCallback(
     (event: React.MouseEvent<HTMLElement>) => {
@@ -55,9 +52,13 @@ function NftDetailPage({ nftId }: Props) {
   const nft = useNft({ id: nftId ?? '' });
   const headTitle = useMemo(() => `${nft?.name} - ${username} | Gallery`, [nft, username]);
 
+  const assetHasNote = nft?.collectors_note !== ''; /* TODO: implement via backend */
+
   if (!nft) {
     return <GalleryRedirect to="/404" />;
   }
+
+  console.log(nft);
 
   return (
     <>
