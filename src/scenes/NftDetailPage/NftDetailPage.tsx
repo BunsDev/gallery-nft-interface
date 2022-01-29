@@ -139,11 +139,6 @@ const StyledContentContainer = styled.div`
   }
 `;
 
-const StyledAssetAndNote = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
 const StyledNftDetailPage = styled(Page)`
   @media only screen and ${breakpoints.mobile} {
     margin-left: ${pageGutter.mobile}px;
