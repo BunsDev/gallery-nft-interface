@@ -51,7 +51,7 @@ If you need access to any of the following:
 - Analytics keys
 - Sentry keys
 
-Hit up a member of the core team!
+Hit up a member of the core team
 
 ### Other commands
 
